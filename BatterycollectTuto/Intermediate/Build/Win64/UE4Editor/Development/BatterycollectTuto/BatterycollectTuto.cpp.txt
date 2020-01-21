@@ -1,0 +1,2 @@
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTuto.h

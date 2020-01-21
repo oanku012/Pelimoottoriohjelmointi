@@ -1,0 +1,4 @@
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTuto.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h

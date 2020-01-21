@@ -1,0 +1,13 @@
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTutoGameMode.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatterycollectTutoGameMode.generated.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTutoCharacter.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatterycollectTutoCharacter.generated.h
