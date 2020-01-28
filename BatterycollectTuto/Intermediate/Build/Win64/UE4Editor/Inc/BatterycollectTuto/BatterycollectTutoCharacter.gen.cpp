@@ -18,6 +18,9 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_BatterycollectTuto();
 	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_CollectPickups();
+	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower();
+	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower();
+	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
@@ -27,6 +30,9 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		UClass* Class = ABatterycollectTutoCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CollectPickups", &ABatterycollectTutoCharacter::execCollectPickups },
+			{ "GetCurrentPower", &ABatterycollectTutoCharacter::execGetCurrentPower },
+			{ "GetInitialPower", &ABatterycollectTutoCharacter::execGetInitialPower },
+			{ "UpdatePower", &ABatterycollectTutoCharacter::execUpdatePower },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -55,6 +61,111 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics
+	{
+		struct BatterycollectTutoCharacter_eventGetCurrentPower_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BatterycollectTutoCharacter_eventGetCurrentPower_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Power" },
+		{ "Comment", "/*Accessor function for current power*/" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Accessor function for current power" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterycollectTutoCharacter, nullptr, "GetCurrentPower", nullptr, nullptr, sizeof(BatterycollectTutoCharacter_eventGetCurrentPower_Parms), Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics
+	{
+		struct BatterycollectTutoCharacter_eventGetInitialPower_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BatterycollectTutoCharacter_eventGetInitialPower_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Power" },
+		{ "Comment", "/*Accessor function for initial power*/" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Accessor function for initial power" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterycollectTutoCharacter, nullptr, "GetInitialPower", nullptr, nullptr, sizeof(BatterycollectTutoCharacter_eventGetInitialPower_Parms), Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics
+	{
+		struct BatterycollectTutoCharacter_eventUpdatePower_Parms
+		{
+			float PowerChange;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PowerChange;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::NewProp_PowerChange = { "PowerChange", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BatterycollectTutoCharacter_eventUpdatePower_Parms, PowerChange), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::NewProp_PowerChange,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Power" },
+		{ "Comment", "/*Function to update the character's power\n\x09* @param powerchange this is the amount to change the power by, and it can be positive or negative\n\x09*/" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Function to update the character's power\n       * @param powerchange this is the amount to change the power by, and it can be positive or negative" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterycollectTutoCharacter, nullptr, "UpdatePower", nullptr, nullptr, sizeof(BatterycollectTutoCharacter_eventUpdatePower_Parms), Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_ABatterycollectTutoCharacter_NoRegister()
 	{
 		return ABatterycollectTutoCharacter::StaticClass();
@@ -66,6 +177,22 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentPower_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CurrentPower;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseSpeed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpeedFactor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SpeedFactor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InitialPower_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_InitialPower;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
 #endif
@@ -96,6 +223,9 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_CollectPickups, "CollectPickups" }, // 3877743196
+		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower, "GetCurrentPower" }, // 906378623
+		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower, "GetInitialPower" }, // 3415932749
+		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower, "UpdatePower" }, // 694756924
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::Class_MetaDataParams[] = {
@@ -104,6 +234,43 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CurrentPower_MetaData[] = {
+		{ "Category", "Power" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CurrentPower = { "CurrentPower", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatterycollectTutoCharacter, CurrentPower), METADATA_PARAMS(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CurrentPower_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CurrentPower_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseSpeed_MetaData[] = {
+		{ "BlueprintProtected", "true" },
+		{ "Category", "Power" },
+		{ "Comment", "//Speed when power level = 0\n" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Speed when power level = 0" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseSpeed = { "BaseSpeed", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatterycollectTutoCharacter, BaseSpeed), METADATA_PARAMS(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseSpeed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_SpeedFactor_MetaData[] = {
+		{ "BlueprintProtected", "true" },
+		{ "Category", "Power" },
+		{ "Comment", "//Multiplier for character speed\n" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Multiplier for character speed" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_SpeedFactor = { "SpeedFactor", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatterycollectTutoCharacter, SpeedFactor), METADATA_PARAMS(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_SpeedFactor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_SpeedFactor_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_InitialPower_MetaData[] = {
+		{ "BlueprintProtected", "true" },
+		{ "Category", "Power" },
+		{ "Comment", "//Power of the player when the game starts\n" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+		{ "ToolTip", "Power of the player when the game starts" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_InitialPower = { "InitialPower", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatterycollectTutoCharacter, InitialPower), METADATA_PARAMS(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_InitialPower_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_InitialPower_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
@@ -156,6 +323,10 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatterycollectTutoCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CameraBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CameraBoom_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CurrentPower,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_SpeedFactor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_InitialPower,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterycollectTutoCharacter_Statics::NewProp_CollectionSphere,
@@ -189,7 +360,7 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABatterycollectTutoCharacter, 3025654604);
+	IMPLEMENT_CLASS(ABatterycollectTutoCharacter, 1629641084);
 	template<> BATTERYCOLLECTTUTO_API UClass* StaticClass<ABatterycollectTutoCharacter>()
 	{
 		return ABatterycollectTutoCharacter::StaticClass();

@@ -58,7 +58,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABatterycollectTutoGameMode); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABatterycollectTutoGameMode)
 
 
-#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_PRIVATE_PROPERTY_OFFSET
+#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__DecayRate() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, DecayRate); }
+
+
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_9_PROLOG
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

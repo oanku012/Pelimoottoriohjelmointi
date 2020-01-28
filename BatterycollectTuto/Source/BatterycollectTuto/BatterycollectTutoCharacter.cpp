@@ -10,6 +10,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/SphereComponent.h"
 #include "Pickup.h"
+#include "BatteryPickup.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ABatterycollectTutoCharacter
@@ -49,6 +50,13 @@ ABatterycollectTutoCharacter::ABatterycollectTutoCharacter()
 	CollectionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CollectionSphere"));
 	CollectionSphere->SetupAttachment(RootComponent);
 	CollectionSphere->SetSphereRadius(200.f);
+
+	//Set up initial power default
+	InitialPower = 2000.f;
+	CurrentPower = InitialPower;
+
+	SpeedFactor = 0.75f;
+	BaseSpeed = 10.0f;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
@@ -147,6 +155,10 @@ void ABatterycollectTutoCharacter::CollectPickups() {
 	//Get all overlapping actors and store them in an array
 	TArray<AActor*> CollectedActors;
 	CollectionSphere->GetOverlappingActors(CollectedActors);
+
+	//Keep track of the collected battery power
+	float CollectedPower = 0;
+
 	//For each actor we collected
 	for (int32 iCollected = 0; iCollected < CollectedActors.Num(); ++iCollected)
 	{
@@ -158,8 +170,31 @@ void ABatterycollectTutoCharacter::CollectPickups() {
 
 			//Call the pickup's WasCollected function
 			TestPickup->WasCollected();
+			//Check to see if the pickup is also a battery
+			ABatteryPickup* const TestBattery = Cast<ABatteryPickup>(TestPickup);
+			if (TestBattery) {
+				//increase the collected power
+				CollectedPower += TestBattery->GetPower();
+			}
 			//Deactivate the pickup
 			TestPickup->SetActive(false);
 		}
 	}
+
+}
+
+float ABatterycollectTutoCharacter::GetInitialPower() {
+	return InitialPower;
+}
+
+float ABatterycollectTutoCharacter::GetCurrentPower() {
+	return CurrentPower;
+}
+
+void ABatterycollectTutoCharacter::UpdatePower(float PowerChange)
+{
+	//change power
+	CurrentPower = CurrentPower + PowerChange;
+	//Change speed based on power
+	GetCharacterMovement()->MaxWalkSpeed = BaseSpeed + SpeedFactor * CurrentPower;
 }

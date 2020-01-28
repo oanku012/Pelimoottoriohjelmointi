@@ -39,3 +39,5 @@ C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Compone
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SphereComponent.generated.h
 E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
 E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
+E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatteryPickup.h
+E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatteryPickup.generated.h

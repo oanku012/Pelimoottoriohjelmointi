@@ -33,6 +33,22 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	/*Accessor function for initial power*/
+	UFUNCTION(BlueprintPure, Category = "Power")
+	float GetInitialPower();
+
+	/*Accessor function for current power*/
+	UFUNCTION(BlueprintPure, Category = "Power")
+	float GetCurrentPower();
+
+	/*Function to update the character's power
+	* @param powerchange this is the amount to change the power by, and it can be positive or negative
+	*/
+	UFUNCTION(BlueprintCallable, Category = "Power")
+		void UpdatePower(float PowerChange);
+
+
+
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -62,7 +78,6 @@ protected:
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
 
-protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
@@ -70,6 +85,21 @@ protected:
 	//Called when we press a key to collect any pickups inside the collectionsphere
 	UFUNCTION(BlueprintCallable, Category = "Pickups")
 	void CollectPickups();
+
+	//Power of the player when the game starts
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
+	float InitialPower;
+	//Multiplier for character speed
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
+	float SpeedFactor;
+	//Speed when power level = 0
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
+	float BaseSpeed;
+
+private:
+
+	UPROPERTY(VisibleAnywhere, Category = "Power")
+	float CurrentPower;
 
 public:
 	/** Returns CameraBoom subobject **/

@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTuto_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x43F545A8,
-				0x5A7390EF,
+				0x758C4478,
+				0xB2844E04,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
