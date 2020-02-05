@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "BatterycollectTuto",
-			"Path": "E:\\Unrealstuff\\BatterycollectTuto\\Source\\BatterycollectTuto.Target.cs",
+			"Path": "D:\\Anton Library\\Documents\\GitHub\\Pelimoottoriohjelmointi\\BatterycollectTuto\\Source\\BatterycollectTuto.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "BatterycollectTutoEditor",
-			"Path": "E:\\Unrealstuff\\BatterycollectTuto\\Source\\BatterycollectTutoEditor.Target.cs",
+			"Path": "D:\\Anton Library\\Documents\\GitHub\\Pelimoottoriohjelmointi\\BatterycollectTuto\\Source\\BatterycollectTutoEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

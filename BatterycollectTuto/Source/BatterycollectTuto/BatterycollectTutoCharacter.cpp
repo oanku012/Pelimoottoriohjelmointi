@@ -181,6 +181,11 @@ void ABatterycollectTutoCharacter::CollectPickups() {
 		}
 	}
 
+	if (CollectedPower > 0) 
+	{
+		UpdatePower(CollectedPower);
+	}
+
 }
 
 float ABatterycollectTutoCharacter::GetInitialPower() {
@@ -197,4 +202,15 @@ void ABatterycollectTutoCharacter::UpdatePower(float PowerChange)
 	CurrentPower = CurrentPower + PowerChange;
 	//Change speed based on power
 	GetCharacterMovement()->MaxWalkSpeed = BaseSpeed + SpeedFactor * CurrentPower;
+	//call visual effect
+	PowerChangeEffect();
+}
+
+// Needed for edited defaults to take effect in the character
+// i.e. this gets called after the constructor when the character is spawned
+// into the game (similar to Unity's Awake()-function)
+void ABatterycollectTutoCharacter::PostInitProperties()
+{
+	Super::PostInitProperties();
+	this->CurrentPower = this->InitialPower;
 }

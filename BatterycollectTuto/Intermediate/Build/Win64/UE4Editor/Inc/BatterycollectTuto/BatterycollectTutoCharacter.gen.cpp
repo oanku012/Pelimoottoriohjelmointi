@@ -20,11 +20,17 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_CollectPickups();
 	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower();
 	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower();
+	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect();
 	BATTERYCOLLECTTUTO_API UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 // End Cross Module References
+	static FName NAME_ABatterycollectTutoCharacter_PowerChangeEffect = FName(TEXT("PowerChangeEffect"));
+	void ABatterycollectTutoCharacter::PowerChangeEffect()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ABatterycollectTutoCharacter_PowerChangeEffect),NULL);
+	}
 	void ABatterycollectTutoCharacter::StaticRegisterNativesABatterycollectTutoCharacter()
 	{
 		UClass* Class = ABatterycollectTutoCharacter::StaticClass();
@@ -131,6 +137,29 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Power" },
+		{ "ModuleRelativePath", "BatterycollectTutoCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterycollectTutoCharacter, nullptr, "PowerChangeEffect", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08080800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower_Statics
 	{
 		struct BatterycollectTutoCharacter_eventUpdatePower_Parms
@@ -225,6 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_CollectPickups, "CollectPickups" }, // 3877743196
 		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_GetCurrentPower, "GetCurrentPower" }, // 906378623
 		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_GetInitialPower, "GetInitialPower" }, // 3415932749
+		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_PowerChangeEffect, "PowerChangeEffect" }, // 3566050723
 		{ &Z_Construct_UFunction_ABatterycollectTutoCharacter_UpdatePower, "UpdatePower" }, // 694756924
 	};
 #if WITH_METADATA
@@ -360,7 +390,7 @@ void EmptyLinkFunctionForGeneratedCodeBatterycollectTutoCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABatterycollectTutoCharacter, 1629641084);
+	IMPLEMENT_CLASS(ABatterycollectTutoCharacter, 3870854236);
 	template<> BATTERYCOLLECTTUTO_API UClass* StaticClass<ABatterycollectTutoCharacter>()
 	{
 		return ABatterycollectTutoCharacter::StaticClass();

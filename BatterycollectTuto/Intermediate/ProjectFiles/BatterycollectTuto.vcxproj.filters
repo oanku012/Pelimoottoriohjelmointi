@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BatterycollectTuto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{806FB144-6128-4AB8-A88A-E7A6E660B91D}</UniqueIdentifier>
+      <UniqueIdentifier>{6D5C1AEE-CD87-4A5F-A919-1EC53DFC1BF6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{8C8597B4-DE4F-4ECA-AA1E-EE1B4EE81970}</UniqueIdentifier>
+      <UniqueIdentifier>{AD891FC7-809B-40A3-915A-AB011E92DF09}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BatterycollectTuto">
-      <UniqueIdentifier>{009CF305-0A52-4A79-8548-1470F0FFAF28}</UniqueIdentifier>
+      <UniqueIdentifier>{132A2A9B-D215-4DBA-AB29-25BDD5ABB3EB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto\BatterycollectTuto.Build.cs">
       <Filter>Source\BatterycollectTuto</Filter>
@@ -53,33 +53,29 @@
     <ClInclude Include="..\..\Source\BatterycollectTuto\BatterycollectTutoGameMode.h">
       <Filter>Source\BatterycollectTuto</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\BatterycollectTuto\MyCharacter.h">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BatterycollectTuto\Pickup.h">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BatterycollectTuto\BatteryPickup.h">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BatterycollectTuto\SpawnVolume.h">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\BatterycollectTuto\MyCharacter.cpp">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BatterycollectTuto\Pickup.cpp">
-      <Filter>Source\BatterycollectTuto</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\BatterycollectTuto\BatteryPickup.cpp">
       <Filter>Source\BatterycollectTuto</Filter>
     </ClCompile>
+    <ClInclude Include="..\..\Source\BatterycollectTuto\BatteryPickup.h">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BatterycollectTuto\MyCharacter.cpp">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BatterycollectTuto\MyCharacter.h">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BatterycollectTuto\Pickup.cpp">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BatterycollectTuto\Pickup.h">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BatterycollectTuto\SpawnVolume.cpp">
       <Filter>Source\BatterycollectTuto</Filter>
     </ClCompile>
+    <ClInclude Include="..\..\Source\BatterycollectTuto\SpawnVolume.h">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

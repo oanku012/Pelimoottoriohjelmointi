@@ -1,6 +1,6 @@
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
-E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTuto.h
-E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\BatteryPickup.h
-E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatteryPickup.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\BatterycollectTuto.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\BatteryPickup.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatteryPickup.generated.h

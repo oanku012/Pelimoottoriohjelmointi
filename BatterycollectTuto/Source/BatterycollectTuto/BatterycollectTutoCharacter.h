@@ -45,9 +45,11 @@ public:
 	* @param powerchange this is the amount to change the power by, and it can be positive or negative
 	*/
 	UFUNCTION(BlueprintCallable, Category = "Power")
-		void UpdatePower(float PowerChange);
+	void UpdatePower(float PowerChange);
 
-
+	// Needed to make sure the modified properties from e.g. blueprints get 
+	// through after the character has been created in the game
+	void PostInitProperties() override;
 
 protected:
 
@@ -95,6 +97,9 @@ protected:
 	//Speed when power level = 0
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float BaseSpeed;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Power")
+	void PowerChangeEffect();
 
 private:
 
