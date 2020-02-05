@@ -14,8 +14,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BATTERYCOLLECTTUTO_BatterycollectTutoGameMode_generated_h
 
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_SPARSE_DATA
-#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_RPC_WRAPPERS
-#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetPowerToWin) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetPowerToWin(); \
+		P_NATIVE_END; \
+	}
+
+
+#define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetPowerToWin) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetPowerToWin(); \
+		P_NATIVE_END; \
+	}
+
+
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABatterycollectTutoGameMode(); \
@@ -59,7 +79,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABatterycollectTutoGameMode); \
 
 
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__DecayRate() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, DecayRate); }
+	FORCEINLINE static uint32 __PPO__DecayRate() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, DecayRate); } \
+	FORCEINLINE static uint32 __PPO__PowerToWin() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, PowerToWin); } \
+	FORCEINLINE static uint32 __PPO__HUDWidgetClass() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, HUDWidgetClass); } \
+	FORCEINLINE static uint32 __PPO__CurrentWidget() { return STRUCT_OFFSET(ABatterycollectTutoGameMode, CurrentWidget); }
 
 
 #define BatterycollectTuto_Source_BatterycollectTuto_BatterycollectTutoGameMode_h_9_PROLOG

@@ -4,6 +4,7 @@
 #include "BatterycollectTutoCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
+#include "Blueprint/UserWidget.h"
 
 ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 {
@@ -21,6 +22,26 @@ ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
+void ABatterycollectTutoGameMode::BeginPlay() {
+	Super::BeginPlay();
+
+	// set the score to beat
+	ABatterycollectTutoCharacter* MyCharacter = Cast<ABatterycollectTutoCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	if (MyCharacter)
+	{
+		PowerToWin = (MyCharacter->GetInitialPower()) * 1.25f;
+	}
+
+	if (HUDWidgetClass != nullptr) 
+	{
+		CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HUDWidgetClass);
+		if (CurrentWidget != nullptr) {
+			CurrentWidget->AddToViewport();
+
+		}
+	}
+}
+
 void ABatterycollectTutoGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -35,4 +56,8 @@ void ABatterycollectTutoGameMode::Tick(float DeltaTime)
 		}
 	}
 
+}
+
+float ABatterycollectTutoGameMode::GetPowerToWin() const {
+	return PowerToWin;
 }
