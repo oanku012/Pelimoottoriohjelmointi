@@ -6,6 +6,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
 #include "SpawnVolume.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "GameFramework/PawnMovementComponent.h"
 
 ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 {
@@ -25,6 +27,20 @@ ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 
 void ABatterycollectTutoGameMode::BeginPlay() {
 	Super::BeginPlay();
+
+	//Find all spawn volume actors
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundActors);
+
+	for (auto Actor : FoundActors)
+	{
+		ASpawnVolume* SpawnVolumeActor = Cast<ASpawnVolume>(Actor);
+		if (SpawnVolumeActor)
+		{
+			SpawnVolumeActors.AddUnique(SpawnVolumeActor);
+		}
+	}
+
 	SetCurrentState(EBatteryPlayState::EPlaying);
 
 	// set the score to beat
@@ -43,18 +59,7 @@ void ABatterycollectTutoGameMode::BeginPlay() {
 		}
 	}
 
-	//Find all spawn volume actors
-	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundActors);
-
-	for (auto Actor : FoundActors)
-	{
-		ASpawnVolume* SpawnVolumeActor = Cast<ASpawnVolume>(Actor);
-		if (SpawnVolumeActor)
-		{
-			SpawnVolumeActors.AddUnique(SpawnVolumeActor);
-		}
-	}
+	
 }
 
 void ABatterycollectTutoGameMode::Tick(float DeltaTime)
@@ -93,5 +98,72 @@ EBatteryPlayState ABatterycollectTutoGameMode::GetCurrentState() const
 
 void ABatterycollectTutoGameMode::SetCurrentState(EBatteryPlayState NewState) 
 {
+	//Set current state
 	CurrentState = NewState;
+	//Handle the new current state
+	HandleNewState(CurrentState);
+}
+
+void ABatterycollectTutoGameMode::HandleNewState(EBatteryPlayState NewState)
+{
+	switch (NewState)
+	{
+			//If the game is playing
+		case EBatteryPlayState::EPlaying:
+		{
+			//Spawn volumes active
+			for (ASpawnVolume* Volume : SpawnVolumeActors)
+			{
+				Volume->SetSpawningActive(true);
+			}
+		}
+		break;
+		//Unknown/default state
+		default:
+		case EBatteryPlayState::EUnknown:
+		{
+
+		}
+		break;
+		//If we lost the game
+		case EBatteryPlayState::EGameOver:
+		{
+			// spawn volumes inactive
+			for (ASpawnVolume* Volume : SpawnVolumeActors)
+			{
+				Volume->SetSpawningActive(false);
+			}
+
+			//, block player input,
+			APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+			if (PlayerController) 
+			{
+				PlayerController->SetCinematicMode(true, false, false, true, true);
+			}
+
+			// ragdoll character
+			ACharacter* MyCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
+
+			if (MyCharacter) {
+				
+				MyCharacter->GetMesh()->SetSimulatePhysics(true);
+				MyCharacter->GetMovementComponent()->MovementState.bCanJump = false;
+
+			}
+
+		}
+		break; 
+		//If game is won
+		case EBatteryPlayState::EWon:
+		{
+			//Spawn volumes inactive
+			//Spawn volumes active
+			for (ASpawnVolume* Volume : SpawnVolumeActors)
+			{
+				Volume->SetSpawningActive(false);
+			}
+		
+		}
+		break;
+	}
 }
