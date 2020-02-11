@@ -5,6 +5,7 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
+#include "SpawnVolume.h"
 
 ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 {
@@ -24,6 +25,7 @@ ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 
 void ABatterycollectTutoGameMode::BeginPlay() {
 	Super::BeginPlay();
+	SetCurrentState(EBatteryPlayState::EPlaying);
 
 	// set the score to beat
 	ABatterycollectTutoCharacter* MyCharacter = Cast<ABatterycollectTutoCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
@@ -40,6 +42,19 @@ void ABatterycollectTutoGameMode::BeginPlay() {
 
 		}
 	}
+
+	//Find all spawn volume actors
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundActors);
+
+	for (auto Actor : FoundActors)
+	{
+		ASpawnVolume* SpawnVolumeActor = Cast<ASpawnVolume>(Actor);
+		if (SpawnVolumeActor)
+		{
+			SpawnVolumeActors.AddUnique(SpawnVolumeActor);
+		}
+	}
 }
 
 void ABatterycollectTutoGameMode::Tick(float DeltaTime)
@@ -49,10 +64,19 @@ void ABatterycollectTutoGameMode::Tick(float DeltaTime)
 	//Check that we are using the battery collector character
 	ABatterycollectTutoCharacter* MyCharacter = Cast<ABatterycollectTutoCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	if (MyCharacter) {
+		//If our power is greater than needed to win, set the game's state to Won
+		if (MyCharacter->GetCurrentPower() > PowerToWin) 
+		{
+			SetCurrentState(EBatteryPlayState::EWon);
+		}
 		//If the character's power is positive
-		if (MyCharacter->GetCurrentPower() > 0) {
+		else if (MyCharacter->GetCurrentPower() > 0) {
 			//Decrease the character's power using the decay rate
 			MyCharacter->UpdatePower(-DeltaTime * DecayRate * (MyCharacter->GetInitialPower()));
+		}
+		else 
+		{
+			SetCurrentState(EBatteryPlayState::EGameOver);
 		}
 	}
 
@@ -60,4 +84,14 @@ void ABatterycollectTutoGameMode::Tick(float DeltaTime)
 
 float ABatterycollectTutoGameMode::GetPowerToWin() const {
 	return PowerToWin;
+}
+
+EBatteryPlayState ABatterycollectTutoGameMode::GetCurrentState() const
+{
+	return CurrentState;
+}
+
+void ABatterycollectTutoGameMode::SetCurrentState(EBatteryPlayState NewState) 
+{
+	CurrentState = NewState;
 }

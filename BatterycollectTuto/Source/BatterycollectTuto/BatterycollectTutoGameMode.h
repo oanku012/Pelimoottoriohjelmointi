@@ -6,6 +6,16 @@
 #include "GameFramework/GameModeBase.h"
 #include "BatterycollectTutoGameMode.generated.h"
 
+//enum to store the current state of gameplay
+UENUM(BlueprintType)
+enum class EBatteryPlayState:uint8
+{
+	EPlaying,
+	EGameOver,
+	EWon,
+	EUnknown
+};
+
 UCLASS(minimalapi)
 class ABatterycollectTutoGameMode : public AGameModeBase
 {
@@ -24,6 +34,13 @@ public:
 
 	virtual void BeginPlay() override;
 
+	//Returns the current playing state
+	UFUNCTION(BlueprintPure, Category = "Power")
+	EBatteryPlayState GetCurrentState() const;
+
+	//Sets a new player state
+	void SetCurrentState(EBatteryPlayState NewState);
+
 protected: 
 	/*The rate at which the character loses power*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
@@ -40,6 +57,13 @@ protected:
 	//The instance of the HUD
 	UPROPERTY()
 	class UUserWidget* CurrentWidget;
+
+private: 
+	//Keeps track of the current playstate
+	EBatteryPlayState CurrentState;
+
+
+	TArray<class ASpawnVolume*> SpawnVolumeActors;
 };
 
 

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BatterycollectTuto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5CC37EB7-1FC2-4115-B213-4C7F0FC20C7A}</UniqueIdentifier>
+      <UniqueIdentifier>{3769A10C-8D1C-4C3C-8F35-804C5C3BE35A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{BC52D8D8-1DC4-4FF1-8816-8E0C5636FFCB}</UniqueIdentifier>
+      <UniqueIdentifier>{29B12714-FFAD-4204-9155-E7DB2E8DEFBD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BatterycollectTuto">
-      <UniqueIdentifier>{0C3B113F-9E41-44BA-AFAC-8F425B23F382}</UniqueIdentifier>
+      <UniqueIdentifier>{8CBCA6FC-357F-4B4D-9E8F-AD22D84FF876}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto\BatterycollectTuto.Build.cs">
       <Filter>Source\BatterycollectTuto</Filter>
