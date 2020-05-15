@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "BatterycollectTuto.h"
+
 #include "BatteryPickup.h"
+#include "BatterycollectTuto.h"
 #include "Components/StaticMeshComponent.h"
 
 //Set default values
@@ -10,6 +11,8 @@ ABatteryPickup::ABatteryPickup() {
 
 	//The base power level of the battery
 	BatteryPower = 150.f;
+
+	//good = true;
 }
 
 void ABatteryPickup::WasCollected_Implementation()

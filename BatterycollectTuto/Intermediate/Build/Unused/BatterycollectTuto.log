@@ -1,0 +1,35 @@
+﻿  Cleaning BatterycollectTutoEditor and UnrealHeaderTool binaries...
+  Using 'git status' to determine working set for adaptive non-unity build (D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi).
+  Creating makefile for BatterycollectTutoEditor (no existing makefile)
+  Parsing headers for BatterycollectTutoEditor
+    Running UnrealHeaderTool "D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\BatterycollectTuto.uproject" "D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\BatterycollectTutoEditor\Development\BatterycollectTutoEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for BatterycollectTutoEditor in 5,7133675 seconds
+  Building BatterycollectTutoEditor...
+  Using Visual Studio 2019 14.25.28614 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Building 21 actions with 6 processes...
+    [1/21] Default.rc2
+    [2/21] SharedPCH.Engine.ShadowErrors.cpp
+    [3/21] MyCharacter.cpp
+    [4/21] BatterycollectTuto.cpp
+    [5/21] Pickup.cpp
+    [6/21] BatteryPickup.cpp
+    [7/21] BatterycollectTuto.init.gen.cpp
+    [8/21] BatterycollectTutoCharacter.cpp
+    [9/21] NPC.cpp
+    [10/21] BatteryPickup.gen.cpp
+    [11/21] BatterycollectTutoGameMode.gen.cpp
+    [12/21] Pickup.gen.cpp
+    [13/21] MyCharacter.gen.cpp
+    [14/21] NPC.gen.cpp
+    [15/21] SpawnVolume.gen.cpp
+    [16/21] BatterycollectTutoCharacter.gen.cpp
+    [17/21] SpawnVolume.cpp
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\SpawnVolume.cpp(73): warning C4996: 'AActor::Instigator': This member will be made private. Please use GetInstigator or SetInstigator. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+    [18/21] BatterycollectTutoGameMode.cpp
+    [19/21] UE4Editor-BatterycollectTuto-0001.lib
+       Creating library D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\UE4Editor-BatterycollectTuto-0001.lib and object D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\UE4Editor-BatterycollectTuto-0001.exp
+    [20/21] UE4Editor-BatterycollectTuto-0001.dll
+       Creating library D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\UE4Editor-BatterycollectTuto-0001.suppressed.lib and object D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\UE4Editor-BatterycollectTuto-0001.suppressed.exp
+    [21/21] BatterycollectTutoEditor.target
+  Total time in Parallel executor: 22,53 seconds
+  Total execution time: 36,32 seconds

@@ -25,6 +25,9 @@ class ABatterycollectTutoCharacter : public ACharacter
 public:
 	ABatterycollectTutoCharacter();
 
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseTurnRate;
@@ -45,9 +48,11 @@ public:
 	* @param powerchange this is the amount to change the power by, and it can be positive or negative
 	*/
 	UFUNCTION(BlueprintCallable, Category = "Power")
-		void UpdatePower(float PowerChange);
+	void UpdatePower(float PowerChange);
 
-
+	// Needed to make sure the modified properties from e.g. blueprints get 
+	// through after the character has been created in the game
+	void PostInitProperties() override;
 
 protected:
 
@@ -84,7 +89,7 @@ protected:
 
 	//Called when we press a key to collect any pickups inside the collectionsphere
 	UFUNCTION(BlueprintCallable, Category = "Pickups")
-	void CollectPickups();
+	void HandleNearbyActors();
 
 	//Power of the player when the game starts
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
@@ -95,6 +100,9 @@ protected:
 	//Speed when power level = 0
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float BaseSpeed;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Power")
+	void PowerChangeEffect();
 
 private:
 

@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"E:\\Unrealstuff\\BatterycollectTuto\\Source\\BatterycollectTuto\\BatterycollectTuto.Build.cs",
-		"E:\\Unrealstuff\\BatterycollectTuto\\Source\\BatterycollectTuto.Target.cs",
-		"E:\\Unrealstuff\\BatterycollectTuto\\Source\\BatterycollectTutoEditor.Target.cs"
+		"D:\\Anton Library\\Documents\\GitHub\\Pelimoottoriohjelmointi\\BatterycollectTuto\\Source\\BatterycollectTuto\\BatterycollectTuto.Build.cs",
+		"D:\\Anton Library\\Documents\\GitHub\\Pelimoottoriohjelmointi\\BatterycollectTuto\\Source\\BatterycollectTuto.Target.cs",
+		"D:\\Anton Library\\Documents\\GitHub\\Pelimoottoriohjelmointi\\BatterycollectTuto\\Source\\BatterycollectTutoEditor.Target.cs"
 	],
-	"EngineVersion": "4.24.1"
+	"EngineVersion": "4.24.2"
 }

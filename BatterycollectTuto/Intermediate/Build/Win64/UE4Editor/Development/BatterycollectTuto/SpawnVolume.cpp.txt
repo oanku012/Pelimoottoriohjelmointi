@@ -1,6 +1,6 @@
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
-E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\SpawnVolume.h
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\SpawnVolume.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\SpawnVolume.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\SpawnVolume.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/BoxComponent.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
@@ -9,5 +9,5 @@ C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Kismet/
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Core\Public\Misc/QualifiedFrameTime.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Kismet\KismetMathLibrary.inl
-E:\Unrealstuff\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
-E:\Unrealstuff\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
