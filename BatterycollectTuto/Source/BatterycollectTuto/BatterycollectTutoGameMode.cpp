@@ -19,7 +19,7 @@ ABatterycollectTutoGameMode::ABatterycollectTutoGameMode()
 	}
 
 	//base decay rate
-	DecayRate = 0.01f;
+	DecayRate = 0.1f;
 
 	//Set the ticking functionality to true
 	PrimaryActorTick.bCanEverTick = true;

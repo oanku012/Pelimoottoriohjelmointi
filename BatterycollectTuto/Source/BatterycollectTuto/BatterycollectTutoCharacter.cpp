@@ -11,6 +11,7 @@
 #include "Components/SphereComponent.h"
 #include "Pickup.h"
 #include "BatteryPickup.h"
+#include "NPC.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ABatterycollectTutoCharacter
@@ -58,8 +59,23 @@ ABatterycollectTutoCharacter::ABatterycollectTutoCharacter()
 	SpeedFactor = 0.75f;
 	BaseSpeed = 10.0f;
 
+	//Set the ticking functionality to true
+	PrimaryActorTick.bCanEverTick = true;
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+}
+
+// Called every frame
+
+//MAYBE CHANGE THIS TO A FIXEDUPDATE SOMEHOW?
+void ABatterycollectTutoCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	
+	HandleNearbyActors();
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -72,7 +88,7 @@ void ABatterycollectTutoCharacter::SetupPlayerInputComponent(class UInputCompone
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAction("Collect", IE_Pressed, this, &ABatterycollectTutoCharacter::CollectPickups);
+	//PlayerInputComponent->BindAction("Collect", IE_Pressed, this, &ABatterycollectTutoCharacter::CollectPickups);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &ABatterycollectTutoCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ABatterycollectTutoCharacter::MoveRight);
@@ -125,13 +141,25 @@ void ABatterycollectTutoCharacter::MoveForward(float Value)
 {
 	if ((Controller != NULL) && (Value != 0.0f))
 	{
-		// find out which way is forward
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
+		if (GetCharacterMovement()->MovementMode == MOVE_Swimming)
+		{
+			//const FRotator Rotation = GetFollowCamera()->GetRelativeRotationFromWorld;
+			const FVector Direction = FollowCamera->GetForwardVector();
 
-		// get forward vector
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-		AddMovementInput(Direction, Value);
+			AddMovementInput(Direction, Value);
+
+		}
+		else {
+
+			// find out which way is forward
+			const FRotator Rotation = Controller->GetControlRotation();
+			const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+			// get forward vector
+			const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+			AddMovementInput(Direction, Value);
+
+		}
 	}
 }
 
@@ -150,42 +178,67 @@ void ABatterycollectTutoCharacter::MoveRight(float Value)
 	}
 }
 
-void ABatterycollectTutoCharacter::CollectPickups() {
+void ABatterycollectTutoCharacter::HandleNearbyActors () {
 
 	//Get all overlapping actors and store them in an array
 	TArray<AActor*> CollectedActors;
 	CollectionSphere->GetOverlappingActors(CollectedActors);
 
-	//Keep track of the collected battery power
-	float CollectedPower = 0;
+	if (CollectedActors.Num() > 0) {
 
-	//For each actor we collected
-	for (int32 iCollected = 0; iCollected < CollectedActors.Num(); ++iCollected)
-	{
-		//Cast the actor to APickup
-		APickup* const TestPickup = Cast<APickup>(CollectedActors[iCollected]);
+		//Keep track of the collected battery power
+		float CollectedPower = 0;
 
-		//If the cast is successful and the pickup is valid and active
-		if (TestPickup && !TestPickup->IsPendingKill() && TestPickup->IsActive()) {
+		//The amount of power drained by an enemy or enemies
+		//float enemyDrainPower = 0;
 
-			//Call the pickup's WasCollected function
-			TestPickup->WasCollected();
-			//Check to see if the pickup is also a battery
-			ABatteryPickup* const TestBattery = Cast<ABatteryPickup>(TestPickup);
-			if (TestBattery) {
-				//increase the collected power
-				CollectedPower += TestBattery->GetPower();
+		//For each actor we collected
+		for (int32 iCollected = 0; iCollected < CollectedActors.Num(); ++iCollected)
+		{
+			//Cast the actor to APickup
+			APickup* const TestPickup = Cast<APickup>(CollectedActors[iCollected]);
+
+			//If the cast is successful and the pickup is valid and active
+			if (TestPickup && !TestPickup->IsPendingKill() && TestPickup->IsActive()) {
+
+				//Call the pickup's WasCollected function
+				TestPickup->WasCollected();
+				//Check to see if the pickup is also a battery
+				ABatteryPickup* const TestBattery = Cast<ABatteryPickup>(TestPickup);
+				if (TestBattery) {
+
+					if (TestBattery->good) {
+						//increase the collected power if it's a good battery
+						CollectedPower += TestBattery->GetPower();
+					}
+					else {
+						//Decrease the collected power if it's a bad battery
+						CollectedPower -= TestBattery->GetPower();
+					}
+				}
+				//Deactivate the pickup
+				TestPickup->SetActive(false);
 			}
-			//Deactivate the pickup
-			TestPickup->SetActive(false);
+			else {
+				//ACharacter* const BadMan = Cast<ACharacter>(CollectedActors[iCollected]);
+
+				ANPC* const BadMan = Cast<ANPC>(CollectedActors[iCollected]);
+				
+
+				if (BadMan && !BadMan->IsPendingKill()) {
+					CollectedPower -= BadMan->GetPowerDrainValue();
+
+				}
+			}
+
+			
+		}
+
+		if (CollectedPower != 0)
+		{
+			UpdatePower(CollectedPower);
 		}
 	}
-
-	if (CollectedPower > 0) 
-	{
-		UpdatePower(CollectedPower);
-	}
-
 }
 
 float ABatterycollectTutoCharacter::GetInitialPower() {

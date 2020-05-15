@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "BatterycollectTuto.h"
 #include "Pickup.h"
+#include "BatterycollectTuto.h"
 #include "Components/StaticMeshComponent.h"
 
 // Sets default values

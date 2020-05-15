@@ -24,8 +24,13 @@ public:
 	/*Public way to access the battery's power level*/
 	float GetPower();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
+	bool good;
+
 protected:
 	/*Set the amount of power the battery gives to the character*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float BatteryPower;
+
+	
 };

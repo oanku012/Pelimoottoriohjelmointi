@@ -25,6 +25,9 @@ class ABatterycollectTutoCharacter : public ACharacter
 public:
 	ABatterycollectTutoCharacter();
 
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseTurnRate;
@@ -86,7 +89,7 @@ protected:
 
 	//Called when we press a key to collect any pickups inside the collectionsphere
 	UFUNCTION(BlueprintCallable, Category = "Pickups")
-	void CollectPickups();
+	void HandleNearbyActors();
 
 	//Power of the player when the game starts
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))

@@ -1,0 +1,7 @@
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4\Development\BatterycollectTuto\Definitions.BatterycollectTuto.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto/BatteryPickup.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\Pickup.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4\Inc\BatterycollectTuto\Pickup.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4\Inc\BatterycollectTuto\BatteryPickup.generated.h

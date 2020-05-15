@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BatterycollectTuto.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{3769A10C-8D1C-4C3C-8F35-804C5C3BE35A}</UniqueIdentifier>
+      <UniqueIdentifier>{94A6DA03-547E-4EE5-9942-F525D840E7D8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{29B12714-FFAD-4204-9155-E7DB2E8DEFBD}</UniqueIdentifier>
+      <UniqueIdentifier>{8E63212F-E03E-4473-8F0E-E6958892B2D3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BatterycollectTuto">
-      <UniqueIdentifier>{8CBCA6FC-357F-4B4D-9E8F-AD22D84FF876}</UniqueIdentifier>
+      <UniqueIdentifier>{1F4749A9-C07A-4458-9E46-A7B39D0E0B73}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatterycollectTuto\BatterycollectTuto.Build.cs">
       <Filter>Source\BatterycollectTuto</Filter>
@@ -63,6 +63,12 @@
       <Filter>Source\BatterycollectTuto</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BatterycollectTuto\MyCharacter.h">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BatterycollectTuto\NPC.cpp">
+      <Filter>Source\BatterycollectTuto</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BatterycollectTuto\NPC.h">
       <Filter>Source\BatterycollectTuto</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BatterycollectTuto\Pickup.cpp">

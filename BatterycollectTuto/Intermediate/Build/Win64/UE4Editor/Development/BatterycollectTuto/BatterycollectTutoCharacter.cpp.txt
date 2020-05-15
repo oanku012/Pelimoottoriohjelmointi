@@ -41,3 +41,5 @@ D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Sou
 D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\Pickup.generated.h
 D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\BatteryPickup.h
 D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\BatteryPickup.generated.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Source\BatterycollectTuto\NPC.h
+D:\Anton Library\Documents\GitHub\Pelimoottoriohjelmointi\BatterycollectTuto\Intermediate\Build\Win64\UE4Editor\Inc\BatterycollectTuto\NPC.generated.h
